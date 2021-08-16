@@ -13,11 +13,14 @@ export type CharactersProps = {
       thumbnail: string
     }
   ]
-  pages: number
+  totalPages: number
 }
 
-export default function Characters({ characters, pages }: CharactersProps) {
-  return <CharactersTemplate characters={characters} pages={pages} />
+export default function Characters({
+  characters,
+  totalPages
+}: CharactersProps) {
+  return <CharactersTemplate characters={characters} totalPages={totalPages} />
 }
 
 export async function getStaticPaths() {
@@ -26,8 +29,8 @@ export async function getStaticPaths() {
   const pages = Math.ceil(response.data.data.total / 20)
   const paths = []
 
-  for (var i = 0; i < pages - 35; i++) {
-    paths.push({ params: { page: `${i}` } })
+  for (var i = 0; i < pages - 60; i++) {
+    paths.push({ params: { page: `${i + 1}` } })
   }
 
   return {
@@ -37,14 +40,15 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const page = params?.page ?? 0
+  const page = Number(params?.page ?? 0)
+
   const response = await api.get("characters", {
     params: {
-      offset: Number(page) * 20
+      offset: (page + 1) * 20
     }
   })
 
-  const pages = Math.ceil(response.data.data.total / 20)
+  const totalPages = Math.ceil(response.data.data.total / 20)
   var regExp = /\(([^)]+)\)/
 
   const characters = response.data.data.results.map((character: any) => {
@@ -63,7 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       characters,
-      pages
+      totalPages
     }
   }
 }

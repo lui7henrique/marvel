@@ -14,7 +14,7 @@ export function Header() {
             <Link href="/">
               <a>HOME</a>
             </Link>
-            <Link href="/characters/0">
+            <Link href="/characters/1">
               <a>CHARACTERS</a>
             </Link>
           </nav>

@@ -1,3 +1,4 @@
+import { NavigateNext, NavigateBefore } from "@styled-icons/material"
 import { useRouter } from "next/dist/client/router"
 import Image from "next/image"
 import Link from "next/link"
@@ -7,23 +8,17 @@ import * as S from "./styles"
 
 export function CharactersTemplate({
   characters,
-  pages: pagesNumber
+  totalPages
 }: CharactersProps) {
   const router = useRouter()
   const { page: currentPage } = router.query
 
-  // function handleNextPage() {
-  //   router.push(`${Number(currentPage) + 1}`)
-  // }
-
-  // function handlePreviousPage() {
-  //   router.push(`${Number(currentPage) - 1}`)
-  // }
-
   const pages = []
-  for (var i = 0; i < pagesNumber; i++) {
-    pages.push(i)
+  for (var i = 0; i < totalPages - 2; i++) {
+    pages.push(i + 1)
   }
+
+  console.log(pages)
 
   return (
     <S.Container>
@@ -51,8 +46,11 @@ export function CharactersTemplate({
       </S.Content>
       <S.Pagination>
         <S.Pages>
+          <span>
+            <NavigateBefore size={20} /> Previous
+          </span>
           {pages
-            .slice(Number(currentPage), Number(currentPage) + 5)
+            .slice(Number(currentPage) - 2, Number(currentPage) + 2)
             .map((page) => {
               return (
                 <Link key={page} href={`${page}`}>
@@ -66,6 +64,9 @@ export function CharactersTemplate({
                 </Link>
               )
             })}
+          <span>
+            Next <NavigateNext size={20} />
+          </span>
         </S.Pages>
       </S.Pagination>
     </S.Container>

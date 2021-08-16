@@ -13,17 +13,29 @@ export const Pagination = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-`
-
-export const Buttons = styled.div`
-  display: flex;
-  gap: 1rem;
+  justify-content: center;
 `
 
 export const Pages = styled.div`
   display: flex;
   gap: 1rem;
+  align-items: center;
+
+  span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    font-family: Roboto, Trebuchet MS, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 1.9em;
+
+    &:after {
+      border-left: 6px solid #999;
+      margin-left: 0.625rem;
+    }
+  }
 
   a {
     display: flex;
@@ -34,9 +46,14 @@ export const Pages = styled.div`
     color: var(--title);
     width: 2rem;
     height: 2rem;
+    transition: all 0.2s ease-in-out;
 
     &.active {
       background-color: var(--primary);
+    }
+
+    &:hover {
+      background: var(--primary);
     }
   }
 `
