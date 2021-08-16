@@ -11,14 +11,13 @@ export function CharactersTemplate({
   totalPages
 }: CharactersProps) {
   const router = useRouter()
-  const { page: currentPage } = router.query
+  const { page } = router.query
+  const currentPage = Number(page)
 
   const pages = []
-  for (var i = 0; i < totalPages - 2; i++) {
+  for (var i = 0; i < totalPages; i++) {
     pages.push(i + 1)
   }
-
-  console.log(pages)
 
   return (
     <S.Container>
@@ -46,27 +45,48 @@ export function CharactersTemplate({
       </S.Content>
       <S.Pagination>
         <S.Pages>
-          <span>
-            <NavigateBefore size={20} /> Previous
-          </span>
-          {pages
-            .slice(Number(currentPage) - 2, Number(currentPage) + 2)
-            .map((page) => {
-              return (
-                <Link key={page} href={`${page}`}>
-                  <a
-                    className={`${
-                      currentPage === String(page) ? "active" : ""
-                    }`}
-                  >
-                    {page}
-                  </a>
-                </Link>
-              )
-            })}
-          <span>
-            Next <NavigateNext size={20} />
-          </span>
+          {!(currentPage === 1) && (
+            <Link href={`${currentPage - 1}`}>
+              <a>
+                <span>
+                  <NavigateBefore size={20} /> Previous
+                </span>
+              </a>
+            </Link>
+          )}
+          {currentPage >= 3
+            ? pages.slice(currentPage - 3, currentPage + 2).map((page) => {
+                return (
+                  <Link key={page} href={`${page}`}>
+                    <a
+                      className={`page ${currentPage === page ? "active" : ""}`}
+                    >
+                      {page}
+                    </a>
+                  </Link>
+                )
+              })
+            : pages.slice(0, 5).map((page) => {
+                return (
+                  <Link key={page} href={`${page}`}>
+                    <a
+                      className={`page ${currentPage === page ? "active" : ""}`}
+                    >
+                      {page}
+                    </a>
+                  </Link>
+                )
+              })}
+
+          {!(currentPage === pages.length) && (
+            <Link href={`${currentPage + 1}`}>
+              <a>
+                <span>
+                  Next <NavigateNext size={20} />
+                </span>
+              </a>
+            </Link>
+          )}
         </S.Pages>
       </S.Pagination>
     </S.Container>

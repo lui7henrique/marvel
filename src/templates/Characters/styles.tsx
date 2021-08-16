@@ -13,7 +13,7 @@ export const Pagination = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 `
 
 export const Pages = styled.div`
@@ -21,26 +21,31 @@ export const Pages = styled.div`
   gap: 1rem;
   align-items: center;
 
-  span {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
-    font-family: Roboto, Trebuchet MS, Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 0.8125rem;
-    line-height: 1.9em;
-
-    &:after {
-      border-left: 6px solid #999;
-      margin-left: 0.625rem;
-    }
-  }
-
   a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: var(--text);
+
+    span {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+
+      font-family: Roboto, Trebuchet MS, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      line-height: 1.9em;
+
+      &:after {
+        border-left: 6px solid #999;
+        margin-left: 0.625rem;
+      }
+    }
+  }
+
+  .page {
     background-color: var(--shape);
     justify-content: center;
     color: var(--title);

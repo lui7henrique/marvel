@@ -29,7 +29,7 @@ export async function getStaticPaths() {
   const pages = Math.ceil(response.data.data.total / 20)
   const paths = []
 
-  for (var i = 0; i < pages - 60; i++) {
+  for (var i = 0; i < pages - 3; i++) {
     paths.push({ params: { page: `${i + 1}` } })
   }
 
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const response = await api.get("characters", {
     params: {
-      offset: (page + 1) * 20
+      offset: (page - 1) * 20
     }
   })
 
