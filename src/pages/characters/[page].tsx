@@ -7,7 +7,8 @@ export type CharactersProps = {
   characters: [
     {
       id: number
-      name: string
+      hero: string
+      name?: string
       description: string
       thumbnail: string
     }
@@ -28,7 +29,6 @@ export async function getStaticPaths() {
   for (var i = 0; i < pages - 65; i++) {
     paths.push({ params: { page: `${i}` } })
   }
-  console.log(paths)
 
   return {
     paths,
@@ -45,11 +45,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   })
 
   const pages = Math.ceil(response.data.data.total / 20)
+  var regExp = /\(([^)]+)\)/
 
   const characters = response.data.data.results.map((character: any) => {
+    const name = regExp.exec(character.name)
+    var hero = character.name.substring(0, character.name.indexOf("("))
+
     return {
       id: character.id,
-      name: character.name,
+      hero: hero ? hero : character.name,
+      name: name ? name[1] : "",
       description: character.description,
       thumbnail: `${character.thumbnail.path}.${character.thumbnail.extension}`
     }
