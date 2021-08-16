@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { HomeTemplate } from "templates/Home"
+
 export default function Home() {
-  return (
-    <div>
-      <h1>Characters</h1>
-    </div>
-  )
+  return <HomeTemplate />
 }

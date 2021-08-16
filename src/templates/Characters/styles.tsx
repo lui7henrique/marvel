@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -21,13 +24,21 @@ export const Buttons = styled.div`
 export const Pages = styled.div`
   display: flex;
   gap: 1rem;
-`
 
-export const Page = styled.a`
-  text-decoration: none;
-  background-color: var(--primary);
-  color: var(--title);
-  padding: 1rem;
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--shape);
+    justify-content: center;
+    color: var(--title);
+    width: 2rem;
+    height: 2rem;
+
+    &.active {
+      background-color: var(--primary);
+    }
+  }
 `
 
 export const Content = styled.main`

@@ -1,5 +1,6 @@
 import { useRouter } from "next/dist/client/router"
 import Image from "next/image"
+import Link from "next/link"
 import { CharactersProps } from "pages/characters/[page]"
 
 import * as S from "./styles"
@@ -54,9 +55,15 @@ export function CharactersTemplate({
             .slice(Number(currentPage), Number(currentPage) + 5)
             .map((page) => {
               return (
-                <S.Page key={page} href={`${page}`}>
-                  {page}
-                </S.Page>
+                <Link key={page} href={`${page}`}>
+                  <a
+                    className={`${
+                      currentPage === String(page) ? "active" : ""
+                    }`}
+                  >
+                    {page}
+                  </a>
+                </Link>
               )
             })}
         </S.Pages>

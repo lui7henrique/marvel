@@ -52,7 +52,7 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
 
 
   body {
-    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: RobotoCondensed, "Trebuchet MS", Helvetica, Arial, sans-serif;;
     background: var(--background);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
@@ -72,24 +72,25 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
     }
   }
 `
-export const Container = styled.div`
-  max-width: 1180px;
-  margin: 0 auto;
-`
 
 export const Switch = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 1rem;
   background: var(--shape);
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
 
   cursor: pointer;
   z-index: 1100;
 
   svg {
     color: var(--primary);
+  }
+
+  &:hover {
+    filter: brightness(0.8);
   }
 `
