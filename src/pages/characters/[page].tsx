@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   const pages = Math.ceil(response.data.data.total / 20)
   const paths = []
 
-  for (var i = 0; i < pages; i++) {
+  for (var i = 0; i < pages - 35; i++) {
     paths.push({ params: { page: `${i}` } })
   }
 
