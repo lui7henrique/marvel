@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Content = styled.main`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 
   @media (max-width: 992px) {
@@ -19,7 +19,7 @@ export const Content = styled.main`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   @media (max-width: 576px) {

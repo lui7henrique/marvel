@@ -26,7 +26,7 @@ export default function Characters({
 export async function getStaticPaths() {
   const response = await api.get("characters")
 
-  const pages = Math.ceil(response.data.data.total / 20)
+  const pages = Math.ceil(response.data.data.total / 36)
   const paths = []
 
   for (var i = 0; i < pages - 20; i++) {
@@ -44,11 +44,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const response = await api.get("characters", {
     params: {
+      limit: 36,
       offset: (page - 1) * 20
     }
   })
 
-  const totalPages = Math.ceil(response.data.data.total / 20)
+  const totalPages = Math.ceil(response.data.data.total / 36)
   var regExp = /\(([^)]+)\)/
 
   const characters = response.data.data.results.map((character: any) => {
