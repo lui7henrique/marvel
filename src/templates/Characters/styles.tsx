@@ -14,8 +14,16 @@ export const Content = styled.main`
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 
-  @media (max-width: 1180px) {
-    grid-template-columns: repeat(5, 1fr);
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 

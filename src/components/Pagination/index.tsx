@@ -12,7 +12,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
   return (
     <S.Pagination>
       <S.Pages>
-        {!(currentPage === 1) && (
+        {/* {!(currentPage === 1) && (
           <Link href={`${currentPage - 1}`}>
             <a>
               <span>
@@ -20,7 +20,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
               </span>
             </a>
           </Link>
-        )}
+        )} */}
 
         {currentPage >= 5 && (
           <>
@@ -60,7 +60,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
           </>
         )}
 
-        {!(currentPage === pages.length) && (
+        {/* {!(currentPage === pages.length) && (
           <Link href={`${currentPage + 1}`}>
             <a>
               <span>
@@ -68,7 +68,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
               </span>
             </a>
           </Link>
-        )}
+        )} */}
       </S.Pages>
     </S.Pagination>
   )
