@@ -6,67 +6,17 @@ export const Container = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-`
-
-export const Pagination = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`
-
-export const Pages = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text);
-
-    span {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      transition: all 0.2s ease-in-out;
-
-      font-family: Roboto, Trebuchet MS, Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 0.8125rem;
-      line-height: 1.9em;
-
-      &:after {
-        border-left: 6px solid #999;
-        margin-left: 0.625rem;
-      }
-    }
-  }
-
-  .page {
-    background-color: var(--shape);
-    justify-content: center;
-    color: var(--title);
-    width: 2rem;
-    height: 2rem;
-    transition: all 0.2s ease-in-out;
-
-    &.active {
-      background-color: var(--primary);
-    }
-
-    &:hover {
-      background: var(--primary);
-    }
-  }
+  gap: 2rem;
 `
 
 export const Content = styled.main`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+
+  @media (max-width: 1180px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `
 
 export const Character = styled.div`

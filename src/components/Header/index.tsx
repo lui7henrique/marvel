@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { MarkGithub } from "@styled-icons/octicons"
 import Link from "next/link"
 
 import * as S from "./styles"
@@ -19,13 +18,6 @@ export function Header() {
             </Link>
           </nav>
         </div>
-        <a
-          href="https://github.com/lui7henrique"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <MarkGithub size={30} />
-        </a>
       </div>
     </S.Header>
   )

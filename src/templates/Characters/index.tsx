@@ -1,7 +1,6 @@
-import { NavigateNext, NavigateBefore } from "@styled-icons/material"
+import { Pagination } from "components/Pagination"
 import { useRouter } from "next/dist/client/router"
 import Image from "next/image"
-import Link from "next/link"
 import { CharactersProps } from "pages/characters/[page]"
 
 import * as S from "./styles"
@@ -43,52 +42,7 @@ export function CharactersTemplate({
           )
         })}
       </S.Content>
-      <S.Pagination>
-        <S.Pages>
-          {!(currentPage === 1) && (
-            <Link href={`${currentPage - 1}`}>
-              <a>
-                <span>
-                  <NavigateBefore size={20} /> Previous
-                </span>
-              </a>
-            </Link>
-          )}
-          {currentPage >= 3
-            ? pages.slice(currentPage - 3, currentPage + 2).map((page) => {
-                return (
-                  <Link key={page} href={`${page}`}>
-                    <a
-                      className={`page ${currentPage === page ? "active" : ""}`}
-                    >
-                      {page}
-                    </a>
-                  </Link>
-                )
-              })
-            : pages.slice(0, 5).map((page) => {
-                return (
-                  <Link key={page} href={`${page}`}>
-                    <a
-                      className={`page ${currentPage === page ? "active" : ""}`}
-                    >
-                      {page}
-                    </a>
-                  </Link>
-                )
-              })}
-
-          {!(currentPage === pages.length) && (
-            <Link href={`${currentPage + 1}`}>
-              <a>
-                <span>
-                  Next <NavigateNext size={20} />
-                </span>
-              </a>
-            </Link>
-          )}
-        </S.Pages>
-      </S.Pagination>
+      <Pagination pages={pages} currentPage={currentPage} />
     </S.Container>
   )
 }

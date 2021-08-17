@@ -6,7 +6,7 @@ export const lightTheme = {
   shape: "#121214",
   text: "#121214",
   title: "#FFFFFF",
-  subtitle: "#BBBBBB"
+  subtitle: "#AAAAAA"
 }
 
 export const darkTheme = {
@@ -14,7 +14,7 @@ export const darkTheme = {
   primary: "#E62429",
   shape: "#1E1E1E",
   text: "#FFFFFF",
-  title: "#FFFFFF",
+  title: "rgb(225, 225, 230)",
   subtitle: "#BBBBBB"
 }
 
