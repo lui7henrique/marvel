@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Marvel characters</title>
+        <title>Marvel Characters</title>
         <link rel="shortcut icon" href="/img/favicon.png" />
         <link rel="apple-touch-icon" href="/img/favicon.png" />
         <link rel="manifest" href="/manifest.json" />

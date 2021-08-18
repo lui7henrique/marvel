@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Pagination = styled.div`
+export const Pagination = styled.section`
   width: 100%;
   display: flex;
   align-items: center;

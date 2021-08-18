@@ -1,4 +1,7 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
+
+import Link from "next/link"
 
 import * as S from "./styles"
 export function HomeTemplate() {
@@ -20,12 +23,13 @@ export function HomeTemplate() {
               Exploring a character just got <span>easier</span>
             </h1>
             <h2>
-              Learn about your favorite Marvel characters, super heroes, &#38;
-              villains! Discover their powers, weaknesses, abilities, &#38;
-              more!
+              Learn about your favorite Marvel characters, super heroes, and
+              villains! Discover their powers, weaknesses, abilities, and more!
             </h2>
           </div>
-          <img src="/img/shield.png" alt="Shiled" />
+          <Link href="/character/1009220">
+            <img src="/img/shield.png" alt="Shiled" />
+          </Link>
         </S.Hero>
       </S.Container>
     </>

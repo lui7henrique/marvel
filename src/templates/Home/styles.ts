@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div``
 
-export const Hero = styled.div`
+export const Hero = styled.section`
   margin: 0 auto;
   position: relative;
   height: 75vh;
@@ -63,7 +63,7 @@ export const BannerContainer = styled.div`
   display: flex;
 `
 
-export const BannerContent = styled.div`
+export const BannerContent = styled.section`
   max-width: 1180px;
   margin: 0 auto;
   padding: 1rem;
