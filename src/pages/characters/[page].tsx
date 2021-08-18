@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await api.get("characters", {
     params: {
       limit: 36,
-      offset: (page - 1) * 20
+      offset: (page - 1) * 36
     }
   })
 
