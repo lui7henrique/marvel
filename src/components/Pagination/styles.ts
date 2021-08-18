@@ -15,7 +15,6 @@ export const Pages = styled.div`
   a {
     display: flex;
     align-items: center;
-    text-decoration: none;
     color: var(--text);
 
     span {
@@ -29,6 +28,13 @@ export const Pages = styled.div`
       font-size: 0.8125rem;
       line-height: 1.9em;
       margin: 1rem;
+
+      @media (max-width: 576px) {
+        &.next,
+        &.previous {
+          display: none;
+        }
+      }
 
       &:after {
         border-left: 6px solid #999;

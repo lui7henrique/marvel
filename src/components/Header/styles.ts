@@ -18,7 +18,6 @@ export const Header = styled.header`
       display: flex;
       gap: 1rem;
       a {
-        text-decoration: none;
         color: var(--title);
         font-weight: bold;
         transition: all 0.2s;

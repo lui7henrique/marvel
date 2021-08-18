@@ -30,6 +30,10 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
     --text: ${({ theme }) => theme.text};
     --title: ${({ theme }) => theme.title};
     --subtitle: ${({ theme }) => theme.subtitle};
+
+    --mobile: 576px;
+    --tablets: 768px;
+    --medium-devices: 992px;
   }
 
   * {
@@ -56,6 +60,7 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
     background: var(--background);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   button {
@@ -69,6 +74,15 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
 
     &:hover {
       filter: brightness(0.8);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: all 0.2 ease-in-out;
+    &:hover{
+      filter: brightness(0.8)
     }
   }
 `

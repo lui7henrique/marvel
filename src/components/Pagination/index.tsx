@@ -15,7 +15,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
         {!(currentPage === 1) && (
           <Link href={`${currentPage - 1}`}>
             <a>
-              <span>
+              <span className="previous">
                 <NavigateBefore size={20} /> Previous
               </span>
             </a>
@@ -63,7 +63,7 @@ export function Pagination({ currentPage, pages }: IPaginationProps) {
         {!(currentPage === pages.length) && (
           <Link href={`${currentPage + 1}`}>
             <a>
-              <span>
+              <span className="next">
                 Next <NavigateNext size={20} />
               </span>
             </a>
