@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <GlobalStyles />
         <Switch onClick={themeToggler}>
-          {theme === "light" ? <LightMode size={30} /> : <DarkMode size={30} />}
+          {theme === "light" ? <LightMode size={20} /> : <DarkMode size={20} />}
         </Switch>
         <Header />
         <Component {...pageProps} />
