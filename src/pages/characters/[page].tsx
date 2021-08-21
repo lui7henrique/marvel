@@ -9,7 +9,6 @@ export type CharactersProps = {
       id: number
       hero: string
       name?: string
-      description: string
       thumbnail: string
     }
   ]
@@ -60,7 +59,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       id: character.id,
       hero: hero ? hero : character.name,
       name: name ? name[1] : "",
-      description: character.description,
       thumbnail: `${character.thumbnail.path}.${character.thumbnail.extension}`
     }
   })

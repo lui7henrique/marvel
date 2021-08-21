@@ -81,6 +81,7 @@ export const GlobalStyles = createGlobalStyle<MyProps>`
     text-decoration: none;
     color: var(--primary);
     transition: all 0.2 ease-in-out;
+
     &:hover{
       filter: brightness(0.8)
     }
