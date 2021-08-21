@@ -36,7 +36,11 @@ export const Character = styled.div`
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background: var(--primary);
+    .wrapper {
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
 
   .info {
@@ -98,11 +102,6 @@ export const Thumb = styled.div`
     height: 210px;
     position: relative;
     overflow: hidden;
-    &:hover {
-      img {
-        transform: scale(1.1);
-      }
-    }
 
     img {
       object-fit: cover;

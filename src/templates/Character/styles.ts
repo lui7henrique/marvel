@@ -19,18 +19,55 @@ export const Content = styled.section`
 export const Infos = styled.aside`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 
   h1 {
     font-size: 2rem;
   }
 
-  p {
+  h2 {
+    font-size: 1rem;
+    filter: opacity(0.5);
+  }
+
+  .description {
+    margin-top: 1rem;
+    filter: opacity(0.8);
     text-align: justify;
   }
 
   img {
     border-radius: 5px;
+    object-fit: cover;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    object-position: top center;
+    background: #121214;
+    background-image: linear-gradient(
+      to right,
+      #121214 0%,
+      #171719 40%,
+      #121214 20%,
+      #121214 100%
+    );
+    object-fit: cover;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    object-position: top center;
+
+    background-size: 80rem 14rem;
+    animation: placeholderShimmer 1s linear infinite forwards;
+    @keyframes placeholderShimmer {
+      0% {
+        background-position: -40rem 0;
+      }
+      100% {
+        background-position: 40rem 0;
+      }
+    }
   }
 `
 
@@ -50,10 +87,11 @@ export const List = styled.section`
     h2 {
       cursor: pointer;
       transition: all 0.2s ease-in-out;
-      filter: brightness(0.5);
 
       &.active {
-        filter: brightness(1);
+        filter: brightness(0.8);
+
+        color: var(--primary);
       }
 
       &:hover {
@@ -101,8 +139,8 @@ export const Cards = styled.section`
     background-image: linear-gradient(
       to right,
       #121214 0%,
-      #171719 20%,
-      #121214 40%,
+      #171719 40%,
+      #121214 20%,
       #121214 100%
     );
     object-fit: cover;
