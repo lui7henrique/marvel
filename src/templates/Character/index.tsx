@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Head from "next/head"
 import Image from "next/image"
 import { CharacterProps } from "pages/character/[id]"
 import { useState } from "react"
@@ -12,9 +11,7 @@ export function CharacterTemplate({ character }: CharacterProps) {
 
   return (
     <>
-      <Head>
-        <title>{character.hero}</title>
-      </Head>
+      <title>{character.hero}</title>
       <S.Container>
         <S.Content>
           <S.Infos>

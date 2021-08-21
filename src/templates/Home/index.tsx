@@ -3,7 +3,6 @@
 
 import { CardList } from "components/CardList"
 import { Footer } from "components/Footer"
-import Head from "next/head"
 import Link from "next/link"
 import { IHomeProps } from "pages"
 
@@ -11,9 +10,7 @@ import * as S from "./styles"
 export function HomeTemplate({ characters }: IHomeProps) {
   return (
     <>
-      <Head>
-        <title>Marvel Characters | Home</title>
-      </Head>
+      <title>Marvel Characters | Home</title>
       <S.BannerContainer>
         <S.BannerContent>
           <h1>MARVEL CHARACTERS</h1>
