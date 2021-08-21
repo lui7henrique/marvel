@@ -13,7 +13,9 @@ export function CharacterTemplate({ character }: CharacterProps) {
   return (
     <>
       <Head>
-        <title>{`${character.hero} (${character.name})`}</title>
+        <title>{`${character.hero} ${
+          character.name && `(${character.name})`
+        }`}</title>
       </Head>
       <S.Container>
         <S.Content>

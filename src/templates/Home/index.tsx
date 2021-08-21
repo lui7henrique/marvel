@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { CardList } from "components/CardList"
+import { Footer } from "components/Footer"
+import Head from "next/head"
 import Link from "next/link"
 import { IHomeProps } from "pages"
 
@@ -9,6 +11,9 @@ import * as S from "./styles"
 export function HomeTemplate({ characters }: IHomeProps) {
   return (
     <>
+      <Head>
+        <title>Marvel Characters | Home</title>
+      </Head>
       <S.BannerContainer>
         <S.BannerContent>
           <h1>MARVEL CHARACTERS</h1>
@@ -36,11 +41,17 @@ export function HomeTemplate({ characters }: IHomeProps) {
 
         <S.FeaturedCharacters>
           <section>
-            <h2>FEATURED CHARACTERS</h2>
+            <div>
+              <h2>FEATURED CHARACTERS</h2>
+              <Link href="/characters/1">
+                <a className="view-all">VIEW ALL</a>
+              </Link>
+            </div>
             <CardList characters={characters} isFeatured />
           </section>
         </S.FeaturedCharacters>
       </S.Container>
+      <Footer />
     </>
   )
 }

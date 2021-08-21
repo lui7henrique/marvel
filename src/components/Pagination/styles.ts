@@ -57,6 +57,7 @@ export const Pages = styled.div`
     }
 
     &:hover {
+      filter: brightness(1);
       background: var(--primary);
     }
   }

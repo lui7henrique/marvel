@@ -7,23 +7,26 @@ export const Header = styled.header`
   justify-content: space-between;
   height: 4rem;
 
-  div {
+  > div {
+    padding: 1rem;
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: space-between;
     max-width: 1180px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 0.5rem;
 
     nav {
       display: flex;
       align-items: center;
       gap: 1rem;
+
       a {
         color: var(--title);
         font-weight: bold;
         transition: all 0.2s;
+
         &.active {
           color: var(--primary);
         }
@@ -47,11 +50,5 @@ export const Header = styled.header`
 
   img {
     width: 100px;
-    margin-right: 6px;
-  }
-
-  section {
-    margin-right: 6px;
-    color: var(--title);
   }
 `
