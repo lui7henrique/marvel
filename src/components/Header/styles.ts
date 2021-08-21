@@ -4,6 +4,8 @@ export const Header = styled.header`
   display: flex;
   padding: 1rem 0;
   background: var(--shape);
+  justify-content: space-between;
+  height: 4rem;
 
   div {
     display: flex;
@@ -16,6 +18,7 @@ export const Header = styled.header`
 
     nav {
       display: flex;
+      align-items: center;
       gap: 1rem;
       a {
         color: var(--title);
@@ -44,5 +47,11 @@ export const Header = styled.header`
 
   img {
     width: 100px;
+    margin-right: 6px;
+  }
+
+  section {
+    margin-right: 6px;
+    color: var(--title);
   }
 `
