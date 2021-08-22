@@ -51,7 +51,7 @@ $ yarn start
 npm run start
 ```
 
-> Access the project at localhost:3000
+> Access the project at: localhost:3000
 
 ---
 
