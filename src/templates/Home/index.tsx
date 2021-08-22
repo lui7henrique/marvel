@@ -3,6 +3,7 @@
 
 import { CardList } from "components/CardList"
 import { Footer } from "components/Footer"
+import { NextSeo } from "next-seo"
 import Link from "next/link"
 import { IHomeProps } from "pages"
 
@@ -10,7 +11,25 @@ import * as S from "./styles"
 export function HomeTemplate({ characters }: IHomeProps) {
   return (
     <>
-      <title>Marvel Characters | Home</title>
+      <NextSeo
+        title="Marvel Characters"
+        description="Learn about your favorite Marvel characters, super heroes, and villains! Discover their hqs, events, and more!"
+        canonical="https://charactersmarvel.vercel.app/"
+        openGraph={{
+          url: "https://futuretrips.vercel.app/",
+          title: "Marvel Characters",
+          description:
+            "Learn about your favorite Marvel characters, super heroes, and villains! Discover their hqs, events, and more!",
+          images: [
+            {
+              url: "https://charactersmarvel.vercel.app/img/cover.png",
+              width: 1280,
+              height: 720,
+              alt: "Marvel Characters"
+            }
+          ]
+        }}
+      />
       <S.BannerContainer>
         <S.BannerContent>
           <h1>MARVEL CHARACTERS</h1>

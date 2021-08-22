@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { NextSeo } from "next-seo"
 import Image from "next/image"
 import { CharacterProps } from "pages/character/[id]"
 import { useState } from "react"
@@ -11,7 +12,24 @@ export function CharacterTemplate({ character }: CharacterProps) {
 
   return (
     <>
-      <title>{character.hero}</title>
+      <NextSeo
+        title={`${character.hero} ${character.name && `(${character.name})`}`}
+        description={character.description}
+        canonical={`https://charactersmarvel.vercel.app/character/${character.id}`}
+        openGraph={{
+          url: `https://charactersmarvel.vercel.app/character/${character.id}`,
+          title: character.hero,
+          description: character.description,
+          images: [
+            {
+              url: character.thumbnail,
+              width: 1280,
+              height: 720,
+              alt: character.hero
+            }
+          ]
+        }}
+      />
       <S.Container>
         <S.Content>
           <S.Infos>
