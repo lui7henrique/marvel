@@ -40,14 +40,14 @@ NEXT_PUBLIC_MARVEL_API_PRIVATE_KEY="yourprivatekey"
 #### Run build script
 ```bash
 $ yarn build 
-//ou 
+//or
 npm run build
 ```
 
 #### Run start script
 ```bash
 $ yarn start 
-//ou 
+//or
 npm run start
 ```
 
