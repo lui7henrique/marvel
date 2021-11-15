@@ -1,6 +1,6 @@
 ## 🦸‍♂️ Marvel Characters
 Learn about your favorite marvel characters, super heroes, and villains! Discover their hqs, events, and more!
-> Acess on: https://charactersmarvel.vercel.app/
+> Access on: https://charactersmarvel.vercel.app/
 
 ## Features
 - [x] Home page with featured characters
